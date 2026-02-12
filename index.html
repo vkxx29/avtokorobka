@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QSoft — Коробочное решение для автобрендов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 10%;
+            position: relative;
+            border-bottom: 1px solid #222;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .logo-qsoft {
+            font-size: 48px;
+            font-weight: 800;
+            color: #00d4ff;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: 56px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #aaa;
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .badge {
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #e84545, #ff6b6b);
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Slide 2 - About */
+        .slide-2 {
+            background: #111;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #00d4ff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: #00d4ff;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .clients-row {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .client-logo {
+            background: #222;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* Slide 3 - KIA Case */
+        .slide-3 {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .case-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1400px;
+            align-items: center;
+        }
+
+        .case-image {
+            background: linear-gradient(145deg, #bb162b, #8b0000);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .kia-logo {
+            font-size: 72px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 10px;
+        }
+
+        .kia-url {
+            margin-top: 20px;
+            font-size: 24px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .case-details h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .case-list {
+            list-style: none;
+        }
+
+        .case-list li {
+            font-size: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .case-list li::before {
+            content: "✓";
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* Slide 4 - Features */
+        .slide-4 {
+            background: #0a0a0a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #151515, #1a1a1a);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #252525;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 30px rgba(0,212,255,0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        /* Slide 5 - Tech Stack */
+        .slide-5 {
+            background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
+        }
+
+        .tech-container {
+            display: flex;
+            gap: 60px;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tech-category {
+            background: #151515;
+            padding: 40px;
+            border-radius: 20px;
+            min-width: 300px;
+            flex: 1;
+        }
+
+        .tech-category h4 {
+            color: #00d4ff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            font-size: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        /* Slide 6 - Benefits */
+        .slide-6 {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .benefit-number {
+            font-size: 64px;
+            font-weight: 800;
+            color: rgba(0,212,255,0.3);
+            margin-bottom: 10px;
+        }
+
+        .benefit-card h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Slide 7 - Offer */
+        .slide-7 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
+        }
+
+        .offer-box {
+            background: linear-gradient(145deg, #151515, #1f1f1f);
+            padding: 60px 80px;
+            border-radius: 30px;
+            border: 2px solid #00d4ff;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .offer-box h3 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .offer-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .offer-list li {
+            font-size: 22px;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .offer-list .icon {
+            font-size: 28px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            color: #000;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Slide 8 - Contacts */
+        .slide-8 {
+            background: #000;
+        }
+
+        .contacts-container {
+            text-align: center;
+        }
+
+        .contacts-container .logo-qsoft {
+            font-size: 72px;
+            margin-bottom: 50px;
+        }
+
+        .contact-info {
+            font-size: 28px;
+            margin: 20px 0;
+        }
+
+        .contact-info a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .final-cta {
+            margin-top: 50px;
+            font-size: 24px;
+            color: #666;
+        }
+
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #444;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot:hover {
+            background: #00d4ff;
+            transform: scale(1.3);
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+            font-size: 14px;
+            color: #444;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .case-container {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 36px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .slide {
+                padding: 40px 5%;
+            }
+            .nav-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Dots -->
+    <nav class="nav-dots">
+        <a href="#slide1" class="nav-dot"></a>
+        <a href="#slide2" class="nav-dot"></a>
+        <a href="#slide3" class="nav-dot"></a>
+        <a href="#slide4" class="nav-dot"></a>
+        <a href="#slide5" class="nav-dot"></a>
+        <a href="#slide6" class="nav-dot"></a>
+        <a href="#slide7" class="nav-dot"></a>
+        <a href="#slide8" class="nav-dot"></a>
+    </nav>
+
+    <!-- Slide 1: Title -->
+    <section class="slide slide-1" id="slide1">
+        <div class="logo-qsoft">QSOFT</div>
+        <h1 class="main-title">Коробочное решение<br>для автомобильных брендов</h1>
+        <p class="subtitle">Готовая платформа для дилерских сетей и автомобильных брендов на базе успешного кейса KIA Russia</p>
+        <div class="badge">🚗 Проверено на 150+ дилерах</div>
+        <span class="slide-number">01 / 08</span>
+    </section>
+
+    <!-- Slide 2: About QSoft -->
+    <section class="slide slide-2" id="slide2">
+        <h2 class="section-title">О компании <span class="highlight">QSOFT</span></h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">лет на рынке</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">реализованных проектов</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">специалистов в команде</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">enterprise-клиентов</div>
+            </div>
+        </div>
+        <div class="clients-row">
+            <div class="client-logo">KIA</div>
+            <div class="client-logo">Сбербанк</div>
+            <div class="client-logo">МТС</div>
+            <div class="client-logo">Росатом</div>
+            <div class="client-logo">ВТБ</div>
+        </div>
+        <span class="slide-number">02 / 08</span>
+    </section>
+
+    <!-- Slide 3: KIA Case -->
+    <section class="slide slide-3" id="slide3">
+        <h2 class="section-title">Кейс: <span class="highlight">KIA.ru</span></h2>
+        <div class="case-container">
+            <div class="case-image">
+                <div class="kia-logo">KIA</div>
+                <div class="kia-url">kia.ru</div>
+            </div>
+            <div class="case-details">
+                <h3>Что мы реализовали:</h3>
+                <ul class="case-list">
+                    <li>Корпоративный сайт бренда</li>
+                    <li>Конфигуратор автомобилей</li>
+                    <li>Интеграция с дилерской сетью (150+ дилеров)</li>
+                    <li>Система онлайн-бронирования</li>
+                    <li>Личный кабинет клиента</li>
+                    <li>Сервис Trade-In онлайн</li>
+                    <li>Кредитный калькулятор</li>
+                    <li>Система управления склад-наличием</li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-number">03 / 08</span>
+    </section>
+
+    <!-- Slide 4: Features -->
+    <section class="slide slide-4" id="slide4">
+        <h2 class="section-title">Модули <span class="highlight">платформы</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚙</div>
+                <h4>3D-конфигуратор</h4>
+                <p>Интерактивный выбор модели, цвета, комплектации с визуализацией в реальном времени</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h4>Дилерская сеть</h4>
+                <p>Карта дилеров, наличие авто, система распределения лидов между дилерами</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h4>Онлайн-продажи</h4>
+                <p>Полный цикл: бронирование, кредит, trade-in, онлайн-оплата</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h4>Личный кабинет</h4>
+                <p>История обслуживания, запись на сервис, уведомления, программа лояльности</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h4>Аналитика</h4>
+                <p>Дашборды продаж, воронка конверсии, отчёты для импортёра</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h4>Интеграции</h4>
+                <p>CRM, 1C, DMS-системы дилеров, банки-партнёры, страховые</p>
+            </div>
+        </div>
+        <span class="slide-number">04 / 08</span>
+    </section>
+
+    <!-- Slide 5: Tech Stack -->
+    <section class="slide slide-5" id="slide5">
+        <h2 class="section-title">Технологический <span class="highlight">стек</span></h2>
+        <div class="tech-container">
+            <div class="tech-category">
+                <h4>Backend</h4>
+                <ul class="tech-list">
+                    <li>1C-Битрикс: Управление сайтом</li>
+                    <li>PHP 8 / Laravel</li>
+                    <li>PostgreSQL / MySQL</li>
+                    <li>Redis / RabbitMQ</li>
+                </ul>
+            </div>
+            <div class="tech-category">
+                <h4>Frontend</h4>
+                <ul class="tech-list">
+                    <li>Vue.js / React</li>
+                    <li>Three.js (3D-визуализация)</li>
+                    <li>TypeScript</li>
+                    <li>Webpack / Vite</li>
+                </ul>
+            </div>
+            <div class="tech-category">
+                <h4>Инфраструктура</h4>
+                <ul class="tech-list">
+                    <li>Docker / Kubernetes</li>
+                    <li>CI/CD Pipeline</li>
+                    <li>Мониторинг 24/7</li>
+                    <li>CDN для медиа</li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-number">05 / 08</span>
+    </section>
+
+    <!-- Slide 6: Benefits -->
+    <section class="slide slide-6" id="slide6">
+        <h2 class="section-title">Преимущества <span class="highlight">коробки</span></h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-number">01</div>
+                <h4>Быстрый запуск</h4>
+                <p>3-4 месяца до полноценного запуска вместо 12-18 месяцев разработки с нуля</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">02</div>
+                <h4>Проверенные решения</h4>
+                <p>Все модули протестированы на реальном трафике 2+ млн пользователей в месяц</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">03</div>
+                <h4>Экономия бюджета</h4>
+                <p>До 60% экономии по сравнению с кастомной разработкой аналогичного функционала</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-number">04</div>
+                <h4>Гибкая кастомизация</h4>
+                <p>Полная адаптация под бренд-бук, бизнес-процессы и интеграции вашей компании</p>
+            </div>
+        </div>
+        <span class="slide-number">06 / 08</span>
+    </section>
+
+    <!-- Slide 7: Offer -->
+    <section class="slide slide-7" id="slide7">
+        <h2 class="section-title">Наше <span class="highlight">предложение</span></h2>
+        <div class="offer-box">
+            <h3>Что входит в пакет:</h3>
+            <ul class="offer-list">
+                <li><span class="icon">📦</span> Лицензия на платформу Auto.Box</li>
+                <li><span class="icon">🎨</span> Брендирование и UX-адаптация</li>
+                <li><span class="icon">🔧</span> Интеграция с вашими системами</li>
+                <li><span class="icon">📚</span> Обучение команды</li>
+                <li><span class="icon">🛡️</span> Техподдержка 24/7 на 12 месяцев</li>
+                <li><span class="icon">🚀</span> Развитие и доработки</li>
+            </ul>
+            <a href="#slide8" class="cta-button">Обсудить проект →</a>
+        </div>
+        <span class="slide-number">07 / 08</span>
+    </section>
+
+    <!-- Slide 8: Contacts -->
+    <section class="slide slide-8" id="slide8">
+        <div class="contacts-container">
+            <div class="logo-qsoft">QSOFT</div>
+            <div class="contact-info">
+                🌐 <a href="https://qsoft.ru" target="_blank">qsoft.ru</a>
+            </div>
+            <div class="contact-info">
+                📧 <a href="mailto:info@qsoft.ru">info@qsoft.ru</a>
+            </div>
+            <div class="contact-info">
+                📞 +7 (495) 926-26-09
+            </div>
+            <div class="contact-info">
+                📍 Москва, Пресненская наб., 12
+            </div>
+            <p class="final-cta">Готовы обсудить ваш проект</p>
+        </div>
+        <span class="slide-number">08 / 08</span>
+    </section>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
