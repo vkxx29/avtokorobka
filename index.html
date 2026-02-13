@@ -272,7 +272,12 @@
             height: 500px;
             background-size: cover;
             background-position: top center;
+            background-repeat: no-repeat;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
         }
 
         .screenshot-image::after {
@@ -348,83 +353,35 @@
             transform: scale(1.2);
         }
 
-        /* Placeholder images - замените URL на реальные скриншоты */
+        /* Placeholder screenshots */
         .screenshot-1 {
             background: linear-gradient(135deg, #1a1a2e, #0f3460);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
             color: #00d4ff;
-        }
-
-        .screenshot-1::before {
-            content: "🏠 Главная страница KIA.ru";
         }
 
         .screenshot-2 {
             background: linear-gradient(135deg, #2d132c, #801336);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
             color: #ff6b6b;
-        }
-
-        .screenshot-2::before {
-            content: "🚗 Конфигуратор автомобиля";
         }
 
         .screenshot-3 {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
             color: #00d4ff;
-        }
-
-        .screenshot-3::before {
-            content: "📋 Каталог авто в наличии";
         }
 
         .screenshot-4 {
             background: linear-gradient(135deg, #134e5e, #71b280);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
             color: #90EE90;
-        }
-
-        .screenshot-4::before {
-            content: "💳 Онлайн-покупка";
         }
 
         .screenshot-5 {
             background: linear-gradient(135deg, #4a1942, #7b2d5b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
             color: #dda0dd;
-        }
-
-        .screenshot-5::before {
-            content: "👤 Личный кабинет";
         }
 
         .screenshot-6 {
             background: linear-gradient(135deg, #2c3e50, #34495e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
             color: #ecf0f1;
-        }
-
-        .screenshot-6::before {
-            content: "📍 Дилерская сеть";
         }
 
         /* Slide 6 - Architecture */
@@ -494,13 +451,6 @@
 
         .arch-component .icon {
             font-size: 20px;
-        }
-
-        .arch-arrows {
-            display: flex;
-            justify-content: center;
-            color: #00d4ff;
-            font-size: 24px;
         }
 
         /* Slide 7 - Tech Stack */
@@ -740,6 +690,12 @@
             .arch-components {
                 flex-direction: column;
             }
+            .offer-box {
+                padding: 40px 30px;
+            }
+            .offer-list li {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -885,11 +841,11 @@
         <div class="slider-container">
             <div class="slider-wrapper">
                 <div class="slider-track" id="sliderTrack">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: Главная страница -->
                     <div class="slider-slide">
                         <div class="screenshot-card">
                             <div class="screenshot-image screenshot-1">
-                                <!-- Замените на: background-image: url('screenshots/homepage.jpg'); -->
+                                🏠 Главная страница KIA.ru
                             </div>
                             <div class="screenshot-info">
                                 <h4>Главная страница</h4>
@@ -897,11 +853,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 2 -->
+                    
+                    <!-- Slide 2: Конфигуратор -->
                     <div class="slider-slide">
                         <div class="screenshot-card">
                             <div class="screenshot-image screenshot-2">
-                                <!-- Замените на: background-image: url('screenshots/configurator.jpg'); -->
+                                🚗 Конфигуратор автомобиля
                             </div>
                             <div class="screenshot-info">
                                 <h4>Конфигуратор автомобиля</h4>
@@ -909,11 +866,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 3 -->
+                    
+                    <!-- Slide 3: Каталог -->
                     <div class="slider-slide">
                         <div class="screenshot-card">
                             <div class="screenshot-image screenshot-3">
-                                <!-- Замените на: background-image: url('screenshots/catalog.jpg'); -->
+                                📋 Каталог авто в наличии
                             </div>
                             <div class="screenshot-info">
                                 <h4>Каталог авто в наличии</h4>
@@ -921,11 +879,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 4 -->
+                    
+                    <!-- Slide 4: Онлайн-покупка -->
                     <div class="slider-slide">
                         <div class="screenshot-card">
                             <div class="screenshot-image screenshot-4">
-                                <!-- Замените на: background-image: url('screenshots/online-purchase.jpg'); -->
+                                💳 Онлайн-покупка
                             </div>
                             <div class="screenshot-info">
                                 <h4>Онлайн-покупка</h4>
@@ -933,11 +892,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 5 -->
+                    
+                    <!-- Slide 5: Личный кабинет -->
                     <div class="slider-slide">
                         <div class="screenshot-card">
                             <div class="screenshot-image screenshot-5">
-                                <!-- Замените на: background-image: url('screenshots/personal-account.jpg'); -->
+                                👤 Личный кабинет
                             </div>
                             <div class="screenshot-info">
                                 <h4>Личный кабинет</h4>
@@ -945,11 +905,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 6 -->
+                    
+                    <!-- Slide 6: Дилеры -->
                     <div class="slider-slide">
                         <div class="screenshot-card">
                             <div class="screenshot-image screenshot-6">
-                                <!-- Замените на: background-image: url('screenshots/dealers.jpg'); -->
+                                📍 Дилерская сеть
                             </div>
                             <div class="screenshot-info">
                                 <h4>Дилерская сеть</h4>
@@ -988,7 +949,10 @@
                             <span class="icon">🌐</span> Сайт бренда
                         </div>
                         <div class="arch-component">
-                            <span class="icon">📱</span> Мобильная версия
+                            <span class="icon">📱</span> Мобильное приложение
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">📋</span> Планшетная приёмка авто
                         </div>
                         <div class="arch-component">
                             <span class="icon">🏪</span> Дилерский портал
@@ -1062,6 +1026,12 @@
                         <div class="arch-component">
                             <span class="icon">🛡️</span> Страховые
                         </div>
+                        <div class="arch-component">
+                            <span class="icon">📊</span> Яндекс Метрика
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🏭</span> Внутренние системы
+                        </div>
                     </div>
                 </div>
 
@@ -1095,10 +1065,10 @@
             <div class="tech-category">
                 <h4>Backend</h4>
                 <ul class="tech-list">
-                    <li>1C-Битрикс: Управление сайтом</li>
                     <li>PHP 8 / Laravel</li>
                     <li>PostgreSQL / MySQL</li>
                     <li>Redis / RabbitMQ</li>
+                    <li>REST API / GraphQL</li>
                 </ul>
             </div>
             <div class="tech-category">
@@ -1157,7 +1127,6 @@
         <div class="offer-box">
             <h3>Что входит в пакет:</h3>
             <ul class="offer-list">
-                <li><span class="icon">📦</span> Лицензия на платформу Auto.Box</li>
                 <li><span class="icon">🎨</span> Брендирование и UX-адаптация</li>
                 <li><span class="icon">🔧</span> Интеграция с вашими системами</li>
                 <li><span class="icon">📚</span> Обучение команды</li>
@@ -1183,7 +1152,7 @@
                 📞 +7 (495) 926-26-09
             </div>
             <div class="contact-info">
-                📍 Москва, Пресненская наб., 12
+                📍 г. Москва, Покровский бульвар, д. 4/17, стр. 1
             </div>
             <p class="final-cta">Готовы обсудить ваш проект</p>
         </div>
