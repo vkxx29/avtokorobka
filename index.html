@@ -551,41 +551,12 @@
 
         .arch-components {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .arch-component {
-            background: #0a0a0a;
-            padding: 15px 25px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .arch-component .icon {
-            font-size: 20px;
-        }
-
-        /* Backend Services Grid */
-        .arch-services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            width: 100%;
-        }
-
-        .arch-services-column {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .arch-service {
             background: #0a0a0a;
             padding: 12px 20px;
             border-radius: 10px;
@@ -597,16 +568,16 @@
             transition: all 0.3s ease;
         }
 
-        .arch-service:hover {
+        .arch-component:hover {
             border-color: #00d4ff;
             background: #111;
         }
 
-        .arch-service .icon {
+        .arch-component .icon {
             font-size: 18px;
         }
 
-        .arch-service.highlight-service {
+        .arch-component.highlight-service {
             border-color: #00d4ff;
             background: rgba(0, 212, 255, 0.1);
         }
@@ -806,12 +777,6 @@
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .arch-services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 1024px) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -852,9 +817,7 @@
             }
             .arch-components {
                 flex-direction: column;
-            }
-            .arch-services-grid {
-                grid-template-columns: 1fr;
+                align-items: center;
             }
             .offer-box {
                 padding: 40px 30px;
@@ -1295,60 +1258,48 @@
                 <!-- Layer 3: Backend Services -->
                 <div class="arch-layer">
                     <div class="arch-layer-title">⚙️ Backend Services</div>
-                    <div class="arch-services-grid">
-                        <!-- Column 1 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service highlight-service">
-                                <span class="icon">🌐</span> Master Site
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🔐</span> Auth Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">👥</span> User Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🚗</span> Catalog Service
-                            </div>
+                    <div class="arch-components">
+                        <div class="arch-component highlight-service">
+                            <span class="icon">🌐</span> Master Site
                         </div>
-                        <!-- Column 2 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">🛒</span> Order Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">💳</span> Payment Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">📍</span> Dealer Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🏢</span> Admin Dealer Panel
-                            </div>
+                        <div class="arch-component">
+                            <span class="icon">🔐</span> Auth Service
                         </div>
-                        <!-- Column 3 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">💰</span> Finance Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🔧</span> Aftersale Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🖼️</span> Media Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🎨</span> Landing Builder
-                            </div>
+                        <div class="arch-component">
+                            <span class="icon">👥</span> User Service
                         </div>
-                        <!-- Column 4 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">📧</span> Notification Service
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🤖</span> Chat-bot Service
-                            </div>
+                        <div class="arch-component">
+                            <span class="icon">🚗</span> Catalog Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🛒</span> Order Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">💳</span> Payment Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">📍</span> Dealer Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🏢</span> Admin Dealer Panel
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">💰</span> Finance Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🔧</span> Aftersale Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🖼️</span> Media Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🎨</span> Landing Builder
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">📧</span> Notification Service
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🤖</span> Chat-bot Service
                         </div>
                     </div>
                 </div>
@@ -1384,54 +1335,42 @@
                 <!-- Layer 5: Data & Infrastructure -->
                 <div class="arch-layer">
                     <div class="arch-layer-title">🗄️ Data & Infrastructure Layer</div>
-                    <div class="arch-services-grid">
-                        <!-- Column 1 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">🔴</span> Redis
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">📋</span> Swagger
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🐘</span> PostgreSQL
-                            </div>
+                    <div class="arch-components">
+                        <div class="arch-component">
+                            <span class="icon">🔴</span> Redis
                         </div>
-                        <!-- Column 2 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">🐰</span> RabbitMQ
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">📊</span> ZABBIX
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">💾</span> MEMCACHED
-                            </div>
+                        <div class="arch-component">
+                            <span class="icon">📋</span> Swagger
                         </div>
-                        <!-- Column 3 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">🔍</span> Sonarqube
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">📝</span> Graylog
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🚀</span> KrakenD
-                            </div>
+                        <div class="arch-component">
+                            <span class="icon">🐘</span> PostgreSQL
                         </div>
-                        <!-- Column 4 -->
-                        <div class="arch-services-column">
-                            <div class="arch-service">
-                                <span class="icon">🦊</span> GitLab
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">🔎</span> Elasticsearch
-                            </div>
-                            <div class="arch-service">
-                                <span class="icon">☸️</span> Kubernetes
-                            </div>
+                        <div class="arch-component">
+                            <span class="icon">🐰</span> RabbitMQ
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">📊</span> ZABBIX
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">💾</span> MEMCACHED
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🔍</span> Sonarqube
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">📝</span> Graylog
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🚀</span> KrakenD
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🦊</span> GitLab
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🔎</span> Elasticsearch
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">☸️</span> Kubernetes
                         </div>
                     </div>
                 </div>
