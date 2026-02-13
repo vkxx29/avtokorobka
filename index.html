@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QSoft — Коробочное решение для автобрендов</title>
     <style>
+        :root {
+            --qsoft-red: #E30613;
+            --qsoft-red-dark: #B8050F;
+            --qsoft-red-light: #FF1A27;
+            --qsoft-black: #0a0a0a;
+            --qsoft-dark: #1a1a1a;
+            --qsoft-gray: #2a2a2a;
+            --qsoft-white: #ffffff;
+            --qsoft-gray-text: #888888;
+            --qsoft-gray-light: #aaaaaa;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,8 +25,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #fff;
+            background: var(--qsoft-black);
+            color: var(--qsoft-white);
             overflow-x: hidden;
         }
 
@@ -31,13 +43,13 @@
 
         /* Slide 1 - Title */
         .slide-1 {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
         }
 
         .logo-qsoft {
             font-size: 48px;
             font-weight: 800;
-            color: #00d4ff;
+            color: var(--qsoft-red);
             letter-spacing: 3px;
             margin-bottom: 30px;
         }
@@ -47,7 +59,7 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #fff, #00d4ff);
+            background: linear-gradient(90deg, var(--qsoft-white), var(--qsoft-red));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -55,7 +67,7 @@
 
         .subtitle {
             font-size: 24px;
-            color: #aaa;
+            color: var(--qsoft-gray-light);
             text-align: center;
             max-width: 700px;
         }
@@ -63,15 +75,16 @@
         .badge {
             margin-top: 40px;
             padding: 15px 40px;
-            background: linear-gradient(90deg, #e84545, #ff6b6b);
+            background: linear-gradient(90deg, var(--qsoft-red), var(--qsoft-red-light));
             border-radius: 50px;
             font-size: 18px;
             font-weight: 600;
+            color: var(--qsoft-white);
         }
 
         /* Slide 2 - About */
         .slide-2 {
-            background: #111;
+            background: var(--qsoft-dark);
         }
 
         .section-title {
@@ -82,7 +95,7 @@
         }
 
         .highlight {
-            color: #00d4ff;
+            color: var(--qsoft-red);
         }
 
         .stats-grid {
@@ -93,27 +106,28 @@
         }
 
         .stat-card {
-            background: linear-gradient(145deg, #1a1a1a, #222);
+            background: linear-gradient(145deg, var(--qsoft-dark), var(--qsoft-gray));
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid #333;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .stat-card:hover {
             transform: translateY(-10px);
+            border-color: var(--qsoft-red);
         }
 
         .stat-number {
             font-size: 56px;
             font-weight: 800;
-            color: #00d4ff;
+            color: var(--qsoft-red);
         }
 
         .stat-label {
             font-size: 16px;
-            color: #888;
+            color: var(--qsoft-gray-text);
             margin-top: 10px;
         }
 
@@ -126,17 +140,23 @@
         }
 
         .client-logo {
-            background: #222;
+            background: var(--qsoft-gray);
             padding: 20px 40px;
             border-radius: 10px;
             font-weight: 600;
             color: #666;
             font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            background: var(--qsoft-red);
+            color: var(--qsoft-white);
         }
 
         /* Slide 3 - KIA Case */
         .slide-3 {
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #0f0f0f 0%, var(--qsoft-dark) 100%);
         }
 
         .case-container {
@@ -148,7 +168,7 @@
         }
 
         .case-image {
-            background: linear-gradient(145deg, #bb162b, #8b0000);
+            background: linear-gradient(145deg, var(--qsoft-red), var(--qsoft-red-dark));
             border-radius: 20px;
             padding: 40px;
             text-align: center;
@@ -157,7 +177,7 @@
         .kia-logo {
             font-size: 72px;
             font-weight: 800;
-            color: #fff;
+            color: var(--qsoft-white);
             letter-spacing: 10px;
         }
 
@@ -187,14 +207,14 @@
 
         .case-list li::before {
             content: "✓";
-            color: #00d4ff;
+            color: var(--qsoft-red);
             font-weight: bold;
             font-size: 24px;
         }
 
         /* Slide 4 - Features */
         .slide-4 {
-            background: #0a0a0a;
+            background: var(--qsoft-black);
         }
 
         .features-grid {
@@ -205,7 +225,7 @@
         }
 
         .feature-card {
-            background: linear-gradient(145deg, #151515, #1a1a1a);
+            background: linear-gradient(145deg, #151515, var(--qsoft-dark));
             padding: 40px;
             border-radius: 20px;
             border: 1px solid #252525;
@@ -213,8 +233,8 @@
         }
 
         .feature-card:hover {
-            border-color: #00d4ff;
-            box-shadow: 0 0 30px rgba(0,212,255,0.1);
+            border-color: var(--qsoft-red);
+            box-shadow: 0 0 30px rgba(227, 6, 19, 0.15);
         }
 
         .feature-icon {
@@ -225,17 +245,17 @@
         .feature-card h4 {
             font-size: 22px;
             margin-bottom: 15px;
-            color: #fff;
+            color: var(--qsoft-white);
         }
 
         .feature-card p {
-            color: #888;
+            color: var(--qsoft-gray-text);
             line-height: 1.6;
         }
 
         /* Module Detail Slides */
         .module-slide {
-            background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+            background: linear-gradient(135deg, var(--qsoft-black) 0%, #151515 100%);
         }
 
         .module-container {
@@ -247,7 +267,7 @@
         }
 
         .module-visual {
-            background: linear-gradient(145deg, #1a1a1a, #222);
+            background: linear-gradient(145deg, var(--qsoft-dark), var(--qsoft-gray));
             border-radius: 30px;
             padding: 60px;
             text-align: center;
@@ -266,18 +286,18 @@
 
         .module-visual h3 {
             font-size: 28px;
-            color: #00d4ff;
+            color: var(--qsoft-red);
         }
 
         .module-content h2 {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #fff;
+            color: var(--qsoft-white);
         }
 
         .module-content .module-description {
             font-size: 18px;
-            color: #aaa;
+            color: var(--qsoft-gray-light);
             line-height: 1.8;
             margin-bottom: 40px;
         }
@@ -287,7 +307,7 @@
         }
 
         .module-features li {
-            background: linear-gradient(145deg, #151515, #1a1a1a);
+            background: linear-gradient(145deg, #151515, var(--qsoft-dark));
             padding: 25px 30px;
             border-radius: 15px;
             margin-bottom: 20px;
@@ -296,7 +316,7 @@
 
         .module-features li h4 {
             font-size: 18px;
-            color: #00d4ff;
+            color: var(--qsoft-red);
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -309,7 +329,7 @@
         }
 
         .module-features li p {
-            color: #888;
+            color: var(--qsoft-gray-text);
             font-size: 16px;
             line-height: 1.6;
         }
@@ -329,25 +349,25 @@
         .step-number {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            background: linear-gradient(135deg, var(--qsoft-red), var(--qsoft-red-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             font-weight: 700;
-            color: #000;
+            color: var(--qsoft-white);
             flex-shrink: 0;
         }
 
         .step-content h4 {
             font-size: 18px;
-            color: #fff;
+            color: var(--qsoft-white);
             margin-bottom: 5px;
         }
 
         .step-content p {
-            color: #888;
+            color: var(--qsoft-gray-text);
             font-size: 16px;
         }
 
@@ -379,7 +399,7 @@
         }
 
         .screenshot-card {
-            background: #1a1a1a;
+            background: var(--qsoft-dark);
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid #333;
@@ -405,7 +425,7 @@
             left: 0;
             right: 0;
             height: 100px;
-            background: linear-gradient(transparent, #1a1a1a);
+            background: linear-gradient(transparent, var(--qsoft-dark));
         }
 
         .screenshot-info {
@@ -418,7 +438,7 @@
         }
 
         .screenshot-info p {
-            color: #888;
+            color: var(--qsoft-gray-text);
             font-size: 16px;
         }
 
@@ -433,9 +453,9 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: #222;
+            background: var(--qsoft-gray);
             border: 2px solid #333;
-            color: #fff;
+            color: var(--qsoft-white);
             font-size: 24px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -445,9 +465,9 @@
         }
 
         .slider-btn:hover {
-            background: #00d4ff;
-            border-color: #00d4ff;
-            color: #000;
+            background: var(--qsoft-red);
+            border-color: var(--qsoft-red);
+            color: var(--qsoft-white);
         }
 
         .slider-dots {
@@ -467,44 +487,44 @@
         }
 
         .slider-dot.active {
-            background: #00d4ff;
+            background: var(--qsoft-red);
             transform: scale(1.2);
         }
 
         /* Placeholder screenshots */
         .screenshot-1 {
-            background: linear-gradient(135deg, #1a1a2e, #0f3460);
-            color: #00d4ff;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            color: var(--qsoft-red);
         }
 
         .screenshot-2 {
-            background: linear-gradient(135deg, #2d132c, #801336);
+            background: linear-gradient(135deg, #2d132c, #4a1942);
             color: #ff6b6b;
         }
 
         .screenshot-3 {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #00d4ff;
+            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            color: var(--qsoft-red);
         }
 
         .screenshot-4 {
-            background: linear-gradient(135deg, #134e5e, #71b280);
+            background: linear-gradient(135deg, #1a1a1a, #333);
             color: #90EE90;
         }
 
         .screenshot-5 {
-            background: linear-gradient(135deg, #4a1942, #7b2d5b);
+            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
             color: #dda0dd;
         }
 
         .screenshot-6 {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            background: linear-gradient(135deg, #1e1e1e, #2e2e2e);
             color: #ecf0f1;
         }
 
         /* Architecture Slide */
         .slide-architecture {
-            background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+            background: linear-gradient(135deg, var(--qsoft-black) 0%, #151515 100%);
         }
 
         .architecture-container {
@@ -520,7 +540,7 @@
         }
 
         .arch-layer {
-            background: linear-gradient(145deg, #1a1a1a, #222);
+            background: linear-gradient(145deg, var(--qsoft-dark), var(--qsoft-gray));
             border-radius: 20px;
             padding: 30px 40px;
             border: 1px solid #333;
@@ -534,7 +554,7 @@
             bottom: -40px;
             width: 2px;
             height: 40px;
-            background: linear-gradient(to bottom, #00d4ff, transparent);
+            background: linear-gradient(to bottom, var(--qsoft-red), transparent);
         }
 
         .arch-layer:last-child::before {
@@ -545,7 +565,7 @@
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #00d4ff;
+            color: var(--qsoft-red);
             margin-bottom: 20px;
         }
 
@@ -557,7 +577,7 @@
         }
 
         .arch-component {
-            background: #0a0a0a;
+            background: var(--qsoft-black);
             padding: 12px 20px;
             border-radius: 10px;
             border: 1px solid #333;
@@ -569,7 +589,7 @@
         }
 
         .arch-component:hover {
-            border-color: #00d4ff;
+            border-color: var(--qsoft-red);
             background: #111;
         }
 
@@ -578,13 +598,13 @@
         }
 
         .arch-component.highlight-service {
-            border-color: #00d4ff;
-            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--qsoft-red);
+            background: rgba(227, 6, 19, 0.1);
         }
 
         /* Tech Stack Slide */
         .slide-tech {
-            background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
+            background: linear-gradient(180deg, var(--qsoft-dark) 0%, var(--qsoft-black) 100%);
         }
 
         .tech-container {
@@ -601,10 +621,16 @@
             border-radius: 20px;
             min-width: 300px;
             flex: 1;
+            border: 1px solid #252525;
+            transition: border-color 0.3s ease;
+        }
+
+        .tech-category:hover {
+            border-color: var(--qsoft-red);
         }
 
         .tech-category h4 {
-            color: #00d4ff;
+            color: var(--qsoft-red);
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -619,11 +645,12 @@
             font-size: 20px;
             padding: 12px 0;
             border-bottom: 1px solid #222;
+            color: var(--qsoft-white);
         }
 
         /* Benefits Slide */
         .slide-benefits {
-            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
         }
 
         .benefits-grid {
@@ -634,40 +661,47 @@
         }
 
         .benefit-card {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--qsoft-red);
+            background: rgba(227, 6, 19, 0.05);
         }
 
         .benefit-number {
             font-size: 64px;
             font-weight: 800;
-            color: rgba(0,212,255,0.3);
+            color: rgba(227, 6, 19, 0.3);
             margin-bottom: 10px;
         }
 
         .benefit-card h4 {
             font-size: 24px;
             margin-bottom: 15px;
+            color: var(--qsoft-white);
         }
 
         .benefit-card p {
-            color: #aaa;
+            color: var(--qsoft-gray-light);
             line-height: 1.6;
         }
 
         /* Offer Slide */
         .slide-offer {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
         }
 
         .offer-box {
             background: linear-gradient(145deg, #151515, #1f1f1f);
             padding: 60px 80px;
             border-radius: 30px;
-            border: 2px solid #00d4ff;
+            border: 2px solid var(--qsoft-red);
             max-width: 900px;
             text-align: center;
         }
@@ -685,6 +719,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            color: var(--qsoft-white);
         }
 
         .offer-list .icon {
@@ -694,17 +729,18 @@
         .cta-button {
             display: inline-block;
             padding: 20px 60px;
-            background: linear-gradient(90deg, #00d4ff, #0099cc);
-            color: #000;
+            background: linear-gradient(90deg, var(--qsoft-red), var(--qsoft-red-dark));
+            color: var(--qsoft-white);
             font-size: 20px;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .cta-button:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(227, 6, 19, 0.3);
         }
 
         /* Contacts Slide */
@@ -724,14 +760,17 @@
         .contact-info {
             font-size: 28px;
             margin: 20px 0;
+            color: var(--qsoft-white);
         }
 
         .contact-info a {
-            color: #00d4ff;
+            color: var(--qsoft-red);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .contact-info a:hover {
+            color: var(--qsoft-red-light);
             text-decoration: underline;
         }
 
@@ -763,7 +802,7 @@
         }
 
         .nav-dot:hover {
-            background: #00d4ff;
+            background: var(--qsoft-red);
             transform: scale(1.3);
         }
 
@@ -1017,7 +1056,7 @@
                 <p class="module-description">
                     Онлайн-контракт — технология, позволяющая создать опыт онлайн-покупки для клиента, и упростить работу дилеров.
                 </p>
-                <h3 style="font-size: 24px; margin-bottom: 25px; color: #00d4ff;">Путь клиента:</h3>
+                <h3 style="font-size: 24px; margin-bottom: 25px; color: var(--qsoft-red);">Путь клиента:</h3>
                 <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
