@@ -233,8 +233,126 @@
             line-height: 1.6;
         }
 
-        /* Slide 5 - Screenshots Slider */
-        .slide-5 {
+        /* Module Detail Slides */
+        .module-slide {
+            background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+        }
+
+        .module-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1400px;
+            align-items: center;
+        }
+
+        .module-visual {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            border: 1px solid #333;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .module-visual .icon {
+            font-size: 100px;
+            margin-bottom: 30px;
+        }
+
+        .module-visual h3 {
+            font-size: 28px;
+            color: #00d4ff;
+        }
+
+        .module-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .module-content .module-description {
+            font-size: 18px;
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .module-features {
+            list-style: none;
+        }
+
+        .module-features li {
+            background: linear-gradient(145deg, #151515, #1a1a1a);
+            padding: 25px 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #252525;
+        }
+
+        .module-features li h4 {
+            font-size: 18px;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-features li h4::before {
+            content: "✓";
+            font-size: 16px;
+        }
+
+        .module-features li p {
+            color: #888;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Online Sales Module - Steps */
+        .steps-container {
+            margin-top: 30px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* Slide Screenshots Slider */
+        .slide-screenshots {
             background: linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
             padding: 60px 5%;
         }
@@ -384,8 +502,8 @@
             color: #ecf0f1;
         }
 
-        /* Slide 6 - Architecture */
-        .slide-6 {
+        /* Architecture Slide */
+        .slide-architecture {
             background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
         }
 
@@ -453,8 +571,8 @@
             font-size: 20px;
         }
 
-        /* Slide 7 - Tech Stack */
-        .slide-7 {
+        /* Tech Stack Slide */
+        .slide-tech {
             background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
         }
 
@@ -492,8 +610,8 @@
             border-bottom: 1px solid #222;
         }
 
-        /* Slide 8 - Benefits */
-        .slide-8 {
+        /* Benefits Slide */
+        .slide-benefits {
             background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
         }
 
@@ -529,8 +647,8 @@
             line-height: 1.6;
         }
 
-        /* Slide 9 - Offer */
-        .slide-9 {
+        /* Offer Slide */
+        .slide-offer {
             background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
         }
 
@@ -578,8 +696,8 @@
             transform: scale(1.05);
         }
 
-        /* Slide 10 - Contacts */
-        .slide-10 {
+        /* Contacts Slide */
+        .slide-contacts {
             background: #000;
         }
 
@@ -620,13 +738,13 @@
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
             z-index: 1000;
         }
 
         .nav-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: #444;
             cursor: pointer;
@@ -655,11 +773,15 @@
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .case-container {
+            .case-container,
+            .module-container {
                 grid-template-columns: 1fr;
             }
             .benefits-grid {
                 grid-template-columns: 1fr;
+            }
+            .module-visual {
+                min-height: 300px;
             }
         }
 
@@ -691,6 +813,12 @@
             .offer-list li {
                 font-size: 18px;
             }
+            .module-content h2 {
+                font-size: 28px;
+            }
+            .section-title {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -708,6 +836,10 @@
         <a href="#slide8" class="nav-dot"></a>
         <a href="#slide9" class="nav-dot"></a>
         <a href="#slide10" class="nav-dot"></a>
+        <a href="#slide11" class="nav-dot"></a>
+        <a href="#slide12" class="nav-dot"></a>
+        <a href="#slide13" class="nav-dot"></a>
+        <a href="#slide14" class="nav-dot"></a>
     </nav>
 
     <!-- Slide 1: Title -->
@@ -716,7 +848,7 @@
         <h1 class="main-title">Коробочное решение<br>для автомобильных брендов</h1>
         <p class="subtitle">Готовая платформа для дилерских сетей и автомобильных брендов на базе успешного кейса KIA Russia</p>
         <div class="badge">🚗 Проверено на 150+ дилерах</div>
-        <span class="slide-number">01 / 10</span>
+        <span class="slide-number">01 / 14</span>
     </section>
 
     <!-- Slide 2: About QSoft -->
@@ -747,7 +879,7 @@
             <div class="client-logo">Росатом</div>
             <div class="client-logo">ВТБ</div>
         </div>
-        <span class="slide-number">02 / 10</span>
+        <span class="slide-number">02 / 14</span>
     </section>
 
     <!-- Slide 3: KIA Case -->
@@ -774,17 +906,17 @@
                 </ul>
             </div>
         </div>
-        <span class="slide-number">03 / 10</span>
+        <span class="slide-number">03 / 14</span>
     </section>
 
-    <!-- Slide 4: Features -->
+    <!-- Slide 4: Features Overview -->
     <section class="slide slide-4" id="slide4">
         <h2 class="section-title">Модули <span class="highlight">платформы</span></h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🚗</div>
                 <h4>Каталог авто в наличии/С пробегом</h4>
-                <p>Витрина автомобилей в наличии у дилеров, фильтры, сравнение, авто с пробегом</p>
+                <p>Витрина автомобилей в наличии у дилеров, фильтры, сравнение</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💳</div>
@@ -814,7 +946,7 @@
             <div class="feature-card">
                 <div class="feature-icon">⚙️</div>
                 <h4>Административная панель</h4>
-                <p>Управление контентом, пользователями, дилерами, отчётами из единого интерфейса</p>
+                <p>Управление контентом, SEO, пользователями, дилерами, отчётами из единого интерфейса</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
@@ -827,11 +959,145 @@
                 <p>CRM, 1C, DMS-системы дилеров, банки-партнёры, страховые</p>
             </div>
         </div>
-        <span class="slide-number">04 / 10</span>
+        <span class="slide-number">04 / 14</span>
     </section>
 
-    <!-- Slide 5: Screenshots Slider -->
-    <section class="slide slide-5" id="slide5">
+    <!-- Slide 5: Module - Catalog -->
+    <section class="slide module-slide" id="slide5">
+        <div class="module-container">
+            <div class="module-visual">
+                <div class="icon">🚗</div>
+                <h3>Каталог авто в наличии/С пробегом</h3>
+            </div>
+            <div class="module-content">
+                <h2>Каталог авто <span class="highlight">в наличии/С пробегом</span></h2>
+                <p class="module-description">
+                    Модуль на сайте автодилера или автопроизводителя, который позволяет посетителям просматривать текущий ассортимент автомобилей, доступных для покупки или заказа.
+                </p>
+                <ul class="module-features">
+                    <li>
+                        <h4>Многофункциональный каталог</h4>
+                        <p>Каталог с подробными описаниями автомобилей: технические характеристики, фотографии и панорамы, цены, доступные модели и комплектации, спец.предложения и поиск по дилерским центрам.</p>
+                    </li>
+                    <li>
+                        <h4>Лёгкий поиск автомобиля</h4>
+                        <p>Клиенты могут легко найти нужный автомобиль, сравнить несколько моделей и связаться с дилером для получения дополнительной информации, оформления заказа.</p>
+                    </li>
+                    <li>
+                        <h4>Автоматическое обновление информации</h4>
+                        <p>Модуль позволяет автоматически обновлять информацию о наличии автомобилей, что снижает затраты времени и ресурсов на ручное обновление данных. Это обеспечивает точность и актуальность информации на сайте.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-number">05 / 14</span>
+    </section>
+
+    <!-- Slide 6: Module - Online Sales -->
+    <section class="slide module-slide" id="slide6">
+        <div class="module-container">
+            <div class="module-visual">
+                <div class="icon">💳</div>
+                <h3>Онлайн-продажи</h3>
+            </div>
+            <div class="module-content">
+                <h2>Модуль <span class="highlight">Онлайн-продажи</span></h2>
+                <p class="module-description">
+                    Онлайн-контракт — технология, позволяющая создать опыт онлайн-покупки для клиента, и упростить работу дилеров.
+                </p>
+                <h3 style="font-size: 24px; margin-bottom: 25px; color: #00d4ff;">Путь клиента:</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Выбор автомобиля</h4>
+                            <p>Клиент выбирает автомобиль и загружает документы для оформления договора в личный кабинет на сайте</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Подтверждение дилером</h4>
+                            <p>Дилер подтверждает договор через личный кабинет администратора</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Оплата и получение</h4>
+                            <p>Клиент оплачивает и получает автомобиль</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">06 / 14</span>
+    </section>
+
+    <!-- Slide 7: Module - Dealer Platform -->
+    <section class="slide module-slide" id="slide7">
+        <div class="module-container">
+            <div class="module-visual">
+                <div class="icon">📍</div>
+                <h3>Дилерская платформа</h3>
+            </div>
+            <div class="module-content">
+                <h2>Модуль <span class="highlight">Дилерская платформа</span></h2>
+                <p class="module-description">
+                    Комплексное решение для управления дилерской сетью и синхронизации данных между всеми участниками.
+                </p>
+                <ul class="module-features">
+                    <li>
+                        <h4>Централизованное управление</h4>
+                        <p>Управление всеми данными и процессами через административную систему (заказы, контент, SEO и т.д.)</p>
+                    </li>
+                    <li>
+                        <h4>Синхронизация данных</h4>
+                        <p>Синхронизация данных с основными сайтами автодистрибьютора. На сайте дилерского сайта автоматически актуализируется и верифицируется информация о моделях, новостях и спецпредложениях.</p>
+                    </li>
+                    <li>
+                        <h4>Простое наполнение контентом</h4>
+                        <p>Простое наполнение уникальным контентом дилерского сайта через конструктор лендингов.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-number">07 / 14</span>
+    </section>
+
+    <!-- Slide 8: Module - Landing Constructor -->
+    <section class="slide module-slide" id="slide8">
+        <div class="module-container">
+            <div class="module-visual">
+                <div class="icon">🎨</div>
+                <h3>Конструктор лендингов</h3>
+            </div>
+            <div class="module-content">
+                <h2>Модуль <span class="highlight">Конструктор лендингов</span></h2>
+                <p class="module-description">
+                    Позволяет сотрудникам самостоятельно создавать уникальные страницы с использованием заранее подготовленных блоков и управлять контентом.
+                </p>
+                <ul class="module-features">
+                    <li>
+                        <h4>Снижение затрат</h4>
+                        <p>Автоматизация процесса создания лендингов сокращает потребность в дополнительных ресурсах и специалистах, что снижает операционные затраты.</p>
+                    </li>
+                    <li>
+                        <h4>Повышение эффективности маркетинговых кампаний</h4>
+                        <p>Гибкость конструктора позволяет создавать целевые страницы, оптимизированные под конкретные маркетинговые цели, что увеличивает эффективность рекламных кампаний.</p>
+                    </li>
+                    <li>
+                        <h4>Консистентность бренда</h4>
+                        <p>Заранее подготовленные блоки и шаблоны обеспечивают единообразие и соответствие корпоративному стилю на всех созданных лендингах.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="slide-number">08 / 14</span>
+    </section>
+
+    <!-- Slide 9: Screenshots Slider -->
+    <section class="slide slide-screenshots" id="slide9">
         <h2 class="section-title">Скриншоты <span class="highlight">KIA.ru</span></h2>
         <div class="slider-container">
             <div class="slider-wrapper">
@@ -928,11 +1194,11 @@
                 <span class="slider-dot" onclick="goToSlide(5)"></span>
             </div>
         </div>
-        <span class="slide-number">05 / 10</span>
+        <span class="slide-number">09 / 14</span>
     </section>
 
-    <!-- Slide 6: Architecture -->
-    <section class="slide slide-6" id="slide6">
+    <!-- Slide 10: Architecture -->
+    <section class="slide slide-architecture" id="slide10">
         <h2 class="section-title"><span class="highlight">Архитектура</span></h2>
         <div class="architecture-container">
             <div class="architecture-diagram">
@@ -951,6 +1217,9 @@
                         </div>
                         <div class="arch-component">
                             <span class="icon">📋</span> Планшетная приёмка авто
+                        </div>
+                        <div class="arch-component">
+                            <span class="icon">🤖</span> Чат-бот
                         </div>
                     </div>
                 </div>
@@ -1047,11 +1316,11 @@
                 </div>
             </div>
         </div>
-        <span class="slide-number">06 / 10</span>
+        <span class="slide-number">10 / 14</span>
     </section>
 
-    <!-- Slide 7: Tech Stack -->
-    <section class="slide slide-7" id="slide7">
+    <!-- Slide 11: Tech Stack -->
+    <section class="slide slide-tech" id="slide11">
         <h2 class="section-title">Технологический <span class="highlight">стек</span></h2>
         <div class="tech-container">
             <div class="tech-category">
@@ -1082,11 +1351,11 @@
                 </ul>
             </div>
         </div>
-        <span class="slide-number">07 / 10</span>
+        <span class="slide-number">11 / 14</span>
     </section>
 
-    <!-- Slide 8: Benefits -->
-    <section class="slide slide-8" id="slide8">
+    <!-- Slide 12: Benefits -->
+    <section class="slide slide-benefits" id="slide12">
         <h2 class="section-title"><span class="highlight">Преимущества</span></h2>
         <div class="benefits-grid">
             <div class="benefit-card">
@@ -1105,27 +1374,27 @@
                 <p>Полная адаптация под бренд-бук, бизнес-процессы и интеграции вашей компании</p>
             </div>
         </div>
-        <span class="slide-number">08 / 10</span>
+        <span class="slide-number">12 / 14</span>
     </section>
 
-    <!-- Slide 9: Offer -->
-    <section class="slide slide-9" id="slide9">
+    <!-- Slide 13: Offer -->
+    <section class="slide slide-offer" id="slide13">
         <h2 class="section-title">Наше <span class="highlight">предложение</span></h2>
         <div class="offer-box">
             <ul class="offer-list">
                 <li><span class="icon">🎨</span> Брендирование и UX-адаптация</li>
                 <li><span class="icon">🔧</span> Интеграция с вашими системами</li>
                 <li><span class="icon">📚</span> Обучение команды</li>
-                <li><span class="icon">🛡️</span> Техническая поддержка и SLA</li>
+                <li><span class="icon">🛡️</span> SLA и техническая поддержка</li>
                 <li><span class="icon">🚀</span> Развитие и доработки</li>
             </ul>
-            <a href="#slide10" class="cta-button">Обсудить проект →</a>
+            <a href="#slide14" class="cta-button">Обсудить проект →</a>
         </div>
-        <span class="slide-number">09 / 10</span>
+        <span class="slide-number">13 / 14</span>
     </section>
 
-    <!-- Slide 10: Contacts -->
-    <section class="slide slide-10" id="slide10">
+    <!-- Slide 14: Contacts -->
+    <section class="slide slide-contacts" id="slide14">
         <div class="contacts-container">
             <div class="logo-qsoft">QSOFT</div>
             <div class="contact-info">
@@ -1142,7 +1411,7 @@
             </div>
             <p class="final-cta">Готовы обсудить ваш проект</p>
         </div>
-        <span class="slide-number">10 / 10</span>
+        <span class="slide-number">14 / 14</span>
     </section>
 
     <script>
